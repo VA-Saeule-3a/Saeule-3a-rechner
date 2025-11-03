@@ -818,6 +818,8 @@
                         },
                         y: {
                             beginAtZero: true,
+                            // KORREKTUR: Erzwingt, dass die Y-Achse Schritte von 100'000 macht
+                            stepSize: 100000, 
                             ticks: {
                                 color: '#9ca3af', 
                                 callback: function(value, index, values) {
@@ -825,7 +827,8 @@
                                         style: 'currency',
                                         currency: 'CHF',
                                         minimumFractionDigits: 0,
-                                        maximumFractionDigits: 0,
+                                        // KORREKTUR: Erlaube eine Kommastelle für 'compact' Notation
+                                        maximumFractionDigits: 1, 
                                         notation: 'compact' 
                                     }).format(value);
                                 }
@@ -1130,3 +1133,4 @@
     </script>
 </body>
 </html>
+
